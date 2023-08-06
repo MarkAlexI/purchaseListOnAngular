@@ -19,12 +19,6 @@ class Item {
   styleUrls: ['./app.component.scss']
 })
 
-/*@NgModule({
-  imports: [
-    FormsModule
-  ],
-})*/
-
 export class AppComponent {
   title = 'List of purchases';
   text: string = '';
@@ -37,6 +31,8 @@ export class AppComponent {
   ];
 
   addItem(text: string, price: number): void {
-    this.items.push(new Item(text, price));
+    if (text.trim().length && price > 0) {
+      this.items.push(new Item(text, price));
+    }
   }
 }
