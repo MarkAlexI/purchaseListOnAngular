@@ -1,82 +1,10 @@
-$page-header-color: #333;
-$panel-border-color: #ccc;
-$form-control-border-color: #ccc;
-$btn-background-color: #007bff;
-$btn-color: #fff;
-$btn-hover-background-color: #0056b3;
-$table-header-background-color: #f2f2f2;
-$even-row-background-color: #f2f2f2;
+$container-background-color: teal;
 
-.page-header {
-  h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1.25rem;
-    color: $page-header-color;
-  }
-}
-
-.panel {
-  margin-top: 1.25rem;
-  border: 1px solid $panel-border-color;
-  padding: 1.25rem;
-
-  .form-inline {
-    padding: .5rem;
-
-    .form-group {
-      margin-bottom: .625rem;
-    }
-
-    .col {
-      padding: 0;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: .5rem;
-      border: 1px solid $form-control-border-color;
-      border-radius: .25rem;
-    }
-
-    .btn {
-      margin-top: .625rem;
-      background-color: $btn-background-color;
-      color: $btn-color;
-      border: none;
-      border-radius: .25px;
-      padding: .5rem 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-
-      &:hover {
-        background-color: $btn-hover-background-color;
-      }
-    }
-  }
-
-  table {
-    width: 100%;
-    margin-top: 1.25rem;
-    border-collapse: collapse;
-
-    th, td {
-      padding: .5rem;
-      border: 1px solid $panel-border-color;
-    }
-
-    th {
-      background-color: $table-header-background-color;
-    }
-
-    tr {
-      &:nth-child(even) {
-        background-color: $even-row-background-color;
-      }
-    }
-
-    input[type="checkbox"] {
-      margin: 0;
-    }
-  }
+.container {
+  background: $container-background-color;
+  margin: 0;
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
