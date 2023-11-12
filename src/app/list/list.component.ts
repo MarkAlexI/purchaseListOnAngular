@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LocalStorageService } from '../services/local-storage.service';
 import { FormsModule } from '@angular/forms';
 
 class Item {
@@ -24,7 +25,17 @@ export class PurchaseListComponent {
   text: string = '';
   price: number = 0;
 
-  items: Item[] = [
+  constructor(private localStorageService: LocalStorageService) {}
+
+  saveData(data: any): void {
+    this.localStorageService.saveData('toDoOnAngular', data);
+  }
+
+  loadData(): any {
+    return this.localStorageService.getData('toDoOnAngular');
+  }
+
+  items: Item[] = this.loadData() || [
     { purchase: 'Bike', price: 1000, done: true },
     { purchase: 'Helmet', price: 20, done: false },
     { purchase: 'Sword', price: 2000, done: true }
@@ -33,6 +44,7 @@ export class PurchaseListComponent {
   addItem(text: string, price: number): void {
     if (text.trim().length && price > 0) {
       this.items.push(new Item(text, price));
+      this.saveData(this.items);
     }
   }
 }
