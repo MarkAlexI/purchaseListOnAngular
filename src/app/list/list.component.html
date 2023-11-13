@@ -46,6 +46,7 @@
         <td><input
               type="checkbox"
               [(ngModel)]="item.done"
+              (ngModelChange)="saveData(items)"
             />
         </td>
       </tr>

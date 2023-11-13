@@ -27,12 +27,12 @@ export class PurchaseListComponent {
 
   constructor(private localStorageService: LocalStorageService) {}
 
-  saveData(data: any): void {
-    this.localStorageService.saveData('toDoOnAngular', data);
+  saveData(data: Item[]): void {
+    this.localStorageService.saveData('purchaseList', data);
   }
 
-  loadData(): any {
-    return this.localStorageService.getData('toDoOnAngular');
+  loadData(): Item[] | null {
+    return this.localStorageService.getData('purchaseList');
   }
 
   items: Item[] = this.loadData() || [
